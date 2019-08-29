@@ -183,7 +183,20 @@ horizontal assymetry (e.g. real-world pictures).
 fill_mode is the strategy used for filling in newly created pixels, which can appear after a rotation or a width/height shift.
 
 
-2_if we add more epochs in the training process but here we can't add more cause more parameters means longer training
+2_if we add more [epochs](https://towardsdatascience.com/epoch-vs-iterations-vs-batch-size-4dfb9c7ce9c9) in the training process but here we can't add more cause more parameters means longer training
+
+One Epoch is when an ENTIRE dataset is passed forward and backward through the neural network only ONCE.
+
+Why we use more than one Epoch?
+I know it doesn’t make sense in the starting that — passing the entire dataset through a neural network is not enough. And we need to pass the full dataset multiple times to the same neural network. But keep in mind that we are using a limited dataset and to optimise the learning and the graph we are using Gradient Descent which is an iterative process. So, updating the weights with single pass or one epoch is not enough
+
+One epoch leads to underfitting of the curve in the graph (below).
+![Screenshot](improvement..png)
+As the number of epochs increases, more number of times the weight are changed in the neural network and the curve goes from underfitting to optimal to overfitting curve
+
+So, what is the right numbers of epochs?
+Unfortunately, there is no right answer to this question. The answer is different for different datasets but you can say that the numbers of epochs is related to how diverse your data is… just an example - Do you have only black cats in your dataset or is it much more diverse dataset?
+
 
 3_if we use more layers of the neural network 
 
