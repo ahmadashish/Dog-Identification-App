@@ -147,15 +147,24 @@ then i use transfer learning to create a CNN that can identify dog breed from im
 
 I used the CNN architecture with the Resnet50 bottleneck and adding the GlobalAveragePooling2D to flatten the features into a vector that could be fed into a fully-connected layer to the end of the ResNet50 model.where the fully -connected layer contains one node for each dog category and is equipped with a softmax.
 
-i suggest the output could be better if;
+i **suggest** the output could be better if we do ;
 
 1_if we use more data and [Augment](https://blog.keras.io/building-powerful-image-classification-models-using-very-little-data.html) the Training Data 
+
 In order to make the most of our few training examples, we will "augment" them via a number of random transformations, so that our model would never see twice the exact same picture. This helps prevent overfitting and helps the model generalize better.
 
 in Keras this can be done via the keras.preprocessing.image.ImageDataGenerator class. This class allows you to:
 
 configure random transformations and normalization operations to be done on your image data during training
 instantiate generators of augmented image batches (and their labels) via .flow(data, labels) or .flow_from_directory(directory). These generators can then be used with the Keras model methods that accept data generators as inputs, fit_generator, evaluate_generator and predict_generator. 
+rotation_range is a value in degrees (0-180), a range within which to randomly rotate pictures
+width_shift and height_shift are ranges (as a fraction of total width or height) within which to randomly translate pictures vertically or horizontally
+rescale is a value by which we will multiply the data before any other processing. Our original images consist in RGB coefficients in the 0-255, but such values would be too high for our models to process (given a typical learning rate), so we target values between 0 and 1 instead by scaling with a 1/255. factor.
+shear_range is for randomly applying shearing transformations
+zoom_range is for randomly zooming inside pictures
+horizontal_flip is for randomly flipping half of the images horizontally --relevant when there are no assumptions of horizontal assymetry (e.g. real-world pictures).
+fill_mode is the strategy used for filling in newly created pixels, which can appear after a rotation or a width/height shift.
+
 
 2_if we add more epochs in the training process but here we can't add more cause more parameters means longer training
 3_if we use more layers of the neural network 
