@@ -124,7 +124,7 @@ there is saved_models where you will find the models those i worked on
 
 # result section 
 
-![Screenshot](result 1.png)
+![Screenshot](result1.png)
 
 
 # A blog post
