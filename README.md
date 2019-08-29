@@ -129,9 +129,7 @@ Here are examples of the algorithms:
 
 ![Screenshot](result1.png)
 
-![Screenshot](result2.png)
 
-![Screenshot](result3.png)
 
 ![Screenshot](result4.png)
 
