@@ -155,7 +155,7 @@ I used the CNN architecture with the Resnet50 bottleneck and adding the GlobalAv
 
 i **suggest** the output could be better if we do ;
 
-1_if we use more data and [Augment](https://blog.keras.io/building-powerful-image-classification-models-using-very-little-data.html) the Training Data 
+**1_if we use more data and [Augment](https://blog.keras.io/building-powerful-image-classification-models-using-very-little-data.html) the Training Data** 
 
 In order to make the most of our few training examples, we will "augment" them via a number of random transformations, so that our model would never see twice the exact same picture. This helps prevent overfitting and helps the model generalize better.
 
@@ -183,7 +183,7 @@ horizontal assymetry (e.g. real-world pictures).
 fill_mode is the strategy used for filling in newly created pixels, which can appear after a rotation or a width/height shift.
 
 
-2_if we add more [epochs](https://towardsdatascience.com/epoch-vs-iterations-vs-batch-size-4dfb9c7ce9c9) in the training process but here we can't add more cause more parameters means longer training
+**2_if we add more [epochs](https://towardsdatascience.com/epoch-vs-iterations-vs-batch-size-4dfb9c7ce9c9) in the training process but here we can't add more cause more parameters means longer training**
 
 One Epoch is when an ENTIRE dataset is passed forward and backward through the neural network only ONCE.
 
@@ -199,11 +199,12 @@ So, what is the right numbers of epochs?
 Unfortunately, there is no right answer to this question. The answer is different for different datasets but you can say that the numbers of epochs is related to how diverse your data is… just an example - Do you have only black cats in your dataset or is it much more diverse dataset?
 
 
-3_if we use more [layers](https://machinelearningmastery.com/how-to-control-neural-network-model-capacity-with-nodes-and-layers/) of the neural network 
+**3_if we use more [layers](https://machinelearningmastery.com/how-to-control-neural-network-model-capacity-with-nodes-and-layers/) of the neural network** 
 
 The capacity of a neural network can be controlled by two aspects of the model:
 
 Number of Nodes
+
 Number of Layers
 
 A model with more nodes or more layers has a greater capacity and, in turn, is potentially capable of learning a larger set of mapping functions. A model with more layers and more hidden units per layer has higher representational capacity — it is capable of representing more complicated functions.
