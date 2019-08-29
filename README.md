@@ -192,6 +192,7 @@ I know it doesn’t make sense in the starting that — passing the entire datas
 
 One epoch leads to underfitting of the curve in the graph (below).
 ![Screenshot](improvement..png)
+
 As the number of epochs increases, more number of times the weight are changed in the neural network and the curve goes from underfitting to optimal to overfitting curve
 
 So, what is the right numbers of epochs?
