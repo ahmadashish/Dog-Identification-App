@@ -114,6 +114,13 @@ I recommend you install Anaconda, a pre-packaged Python distribution that contai
 
 # file descriptions
 
+there is dog_app.ipynb where the possible solution will found.
+
+there is bottleneck_features when you Pick one of the above architectures, download the corresponding bottleneck features, and store the downloaded file in the bottleneck_features/ folder in the repository.
+
+there is images where you will find the images to test your algorithm . Feel free to use any images you like. Use at least two human and two dog images.
+
+there is saved_models where you will find the models those i worked on
 
 # A blog post
 
