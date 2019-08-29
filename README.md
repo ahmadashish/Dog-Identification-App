@@ -147,6 +147,20 @@ then i use transfer learning to create a CNN that can identify dog breed from im
 
 I used the CNN architecture with the Resnet50 bottleneck and adding the GlobalAveragePooling2D to flatten the features into a vector that could be fed into a fully-connected layer to the end of the ResNet50 model.where the fully -connected layer contains one node for each dog category and is equipped with a softmax.
 
+i suggest the output could be better if;
+
+1_if we use more data and [Augment](https://blog.keras.io/building-powerful-image-classification-models-using-very-little-data.html) the Training Data 
+In order to make the most of our few training examples, we will "augment" them via a number of random transformations, so that our model would never see twice the exact same picture. This helps prevent overfitting and helps the model generalize better.
+
+in Keras this can be done via the keras.preprocessing.image.ImageDataGenerator class. This class allows you to:
+
+configure random transformations and normalization operations to be done on your image data during training
+instantiate generators of augmented image batches (and their labels) via .flow(data, labels) or .flow_from_directory(directory). These generators can then be used with the Keras model methods that accept data generators as inputs, fit_generator, evaluate_generator and predict_generator. 
+
+2_if we add more epochs in the training process but here we can't add more cause more parameters means longer training
+3_if we use more layers of the neural network 
+
+
 # result section 
 
 I used the 'transfer learning - Resnet50 model' to implement an algorithm for a Dog identification application. The user provides an image, and the algorithm first detects whether the image is human or dog. If it is a dog, it predicts the breed. If it is a human, it returns the resembling dog breed.where the model produced the test accuracy of around 80%. 
