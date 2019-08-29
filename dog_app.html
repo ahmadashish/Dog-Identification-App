@@ -13634,7 +13634,8 @@ There are 11.0% images of the first 100 dog_files that have a detected human fac
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Question 2:</strong> This algorithmic choice necessitates that we communicate to the user that we accept human images only when they provide a clear view of a face (otherwise, we risk having unneccessarily frustrated users!). In your opinion, is this a reasonable expectation to pose on the user? If not, can you think of a way to detect humans in images that does not necessitate an image with a clearly presented face?</p>
-<p><strong>Answer:</strong></p>
+<p><strong>Answer:</strong> 
+<strong>the technique we selected for face detection requires a clear view of a face (ie. doesn't perform well on occlusions). If we wanted better performance for a wider variety of photo conditions, we could build a CNN specifically for detecting human faces. The training data should include a diverse set of images from a wide variety of angles, lighting conditions, and partial obscurations (wearing a hat, hand in front of face, etc).</strong></p>
 <p>We suggest the face detector from OpenCV as a potential way to detect human images in your algorithm, but you are free to explore other approaches, especially approaches that make use of deep learning :).  Please use the code cell below to design and test your own face detection algorithm.  If you decide to pursue this <em>optional</em> task, report performance on each of the datasets.</p>
 
 </div>
@@ -15070,6 +15071,14 @@ Boykin_spaniel
 </div>
 </div>
 
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>The link is caused by Keras re-downloading the bottleneck features for ResNet50. this as the link specifies to not to include the top features. Why does Keras download the bottleneck features again? I'm not entirely sure. My best guess is that perhaps when Keras began providing these model weights through keras.applications, something became deprecated in terms of how the weights are formatted or stored. Either way, it's not something to worry about.</strong></p>
+
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
