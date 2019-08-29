@@ -14992,10 +14992,39 @@ Epoch 20/20
 <h2 id="Step-7:-Test-Your-Algorithm">Step 7: Test Your Algorithm<a class="anchor-link" href="#Step-7:-Test-Your-Algorithm">&#182;</a></h2><p>In this section, you will take your new algorithm for a spin!  What kind of dog does the algorithm think that <strong>you</strong> look like?  If you have a dog, does it predict your dog's breed accurately?  If you have a cat, does it mistakenly think that your cat is a dog?</p>
 <h3 id="(IMPLEMENTATION)-Test-Your-Algorithm-on-Sample-Images!">(IMPLEMENTATION) Test Your Algorithm on Sample Images!<a class="anchor-link" href="#(IMPLEMENTATION)-Test-Your-Algorithm-on-Sample-Images!">&#182;</a></h3><p>Test your algorithm at least six images on your computer.  Feel free to use any images you like.  Use at least two human and two dog images.</p>
 <p><strong>Question 6:</strong> Is the output better than you expected :) ?  Or worse :( ?  Provide at least three possible points of improvement for your algorithm.</p>
-<p><strong>Answer:</strong>  <strong>the output better than i expected but it could be better;</strong></p>
-<p><strong>1_if we use more data and using Image Augmentation</strong></p>
-<p><strong>2_if we add more epochs in the training process but here we can't add more cause more parameters means longer training</strong></p>
-<p><strong>3_if we use more layers of the neural network</strong></p>
+<p><strong>Answer:</strong></p>
+<p>i <strong>suggest</strong> the output could be better if we do ;</p>
+<p><strong>1_if we use more data and <a href="https://blog.keras.io/building-powerful-image-classification-models-using-very-little-data.html">Augment</a> the Training Data</strong></p>
+<p>In order to make the most of our few training examples, we will "augment" them via a number of random transformations, so that our model would never see twice the exact same picture. This helps prevent overfitting and helps the model generalize better.</p>
+<p>in Keras this can be done via the keras.preprocessing.image.ImageDataGenerator class. This class allows you to:</p>
+<p>configure random transformations and normalization operations to be done on your image data during training.</p>
+<p>instantiate generators of augmented image batches (and their labels) via .flow(data, labels) or .flow_from_directory(directory).</p>
+<p>These generators can then be used with the Keras model methods that accept data generators as inputs, fit_generator, evaluate_generator and predict_generator.</p>
+<p>rotation_range is a value in degrees (0-180), a range within which to randomly rotate pictures</p>
+<p>width_shift and height_shift are ranges (as a fraction of total width or height) within which to randomly translate pictures vertically or horizontally</p>
+<p>rescale is a value by which we will multiply the data before any other processing. Our original images consist in RGB coefficients in the 0-255, but such values would be too high for our models to process (given a typical learning rate), so we target values between 0 and 1 instead by scaling with a 1/255. factor.</p>
+<p>shear_range is for randomly applying shearing transformations</p>
+<p>zoom_range is for randomly zooming inside pictures</p>
+<p>horizontal_flip is for randomly flipping half of the images horizontally --relevant when there are no assumptions of</p>
+<p>horizontal assymetry (e.g. real-world pictures).
+fill_mode is the strategy used for filling in newly created pixels, which can appear after a rotation or a width/height shift.</p>
+<p><strong>2_if we add more <a href="https://towardsdatascience.com/epoch-vs-iterations-vs-batch-size-4dfb9c7ce9c9">epochs</a> in the training process but here we can't add more cause more parameters means longer training</strong></p>
+<p>One Epoch is when an ENTIRE dataset is passed forward and backward through the neural network only ONCE.</p>
+<p>Why we use more than one Epoch?
+I know it doesn’t make sense in the starting that — passing the entire dataset through a neural network is not enough. And we need to pass the full dataset multiple times to the same neural network. But keep in mind that we are using a limited dataset and to optimise the learning and the graph we are using Gradient Descent which is an iterative process. So, updating the weights with single pass or one epoch is not enough</p>
+<p>One epoch leads to underfitting of the curve in the graph (below).
+<img src="improvement.png" alt="Screenshot"></p>
+<p>As the number of epochs increases, more number of times the weight are changed in the neural network and the curve goes from underfitting to optimal to overfitting curve</p>
+<p>So, what is the right numbers of epochs?
+Unfortunately, there is no right answer to this question. The answer is different for different datasets but you can say that the numbers of epochs is related to how diverse your data is… just an example - Do you have only black cats in your dataset or is it much more diverse dataset?</p>
+<p><strong>3_if we use more <a href="https://machinelearningmastery.com/how-to-control-neural-network-model-capacity-with-nodes-and-layers/">layers</a> of the neural network</strong></p>
+<p>The capacity of a neural network can be controlled by two aspects of the model:</p>
+<p>Number of Nodes</p>
+<p>Number of Layers</p>
+<p>A model with more nodes or more layers has a greater capacity and, in turn, is potentially capable of learning a larger set of mapping functions. A model with more layers and more hidden units per layer has higher representational capacity — it is capable of representing more complicated functions.</p>
+<p>Neural network model capacity is controlled both by the number of nodes and the number of layers in the model.</p>
+<p>A model with a single hidden layer and sufficient number of nodes has the capability of learning any mapping function, but the chosen learning algorithm may or may not be able to realize this capability.</p>
+<p>Increasing the number of layers provides a short-cut to increasing the capacity of the model with fewer resources, and modern techniques allow learning algorithms to successfully train deep models.</p>
 
 </div>
 </div>
