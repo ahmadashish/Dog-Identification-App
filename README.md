@@ -124,6 +124,9 @@ there is saved_models where you will find the models those i worked on
 
 # result section 
 
+I used the 'transfer learning - Resnet50 model' to implement an algorithm for a Dog identification application. The user provides an image, and the algorithm first detects whether the image is human or dog. If it is a dog, it predicts the breed. If it is a human, it returns the resembling dog breed.where the model produced the test accuracy of around 80%. 
+Here are examples of the algorithms:
+
 ![Screenshot](result1.png)
 
 ![Screenshot](result2.png)
