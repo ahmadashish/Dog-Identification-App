@@ -199,8 +199,20 @@ So, what is the right numbers of epochs?
 Unfortunately, there is no right answer to this question. The answer is different for different datasets but you can say that the numbers of epochs is related to how diverse your data is… just an example - Do you have only black cats in your dataset or is it much more diverse dataset?
 
 
-3_if we use more layers of the neural network 
+3_if we use more [layers](https://machinelearningmastery.com/how-to-control-neural-network-model-capacity-with-nodes-and-layers/) of the neural network 
 
+The capacity of a neural network can be controlled by two aspects of the model:
+
+Number of Nodes
+Number of Layers
+
+A model with more nodes or more layers has a greater capacity and, in turn, is potentially capable of learning a larger set of mapping functions. A model with more layers and more hidden units per layer has higher representational capacity — it is capable of representing more complicated functions.
+
+Neural network model capacity is controlled both by the number of nodes and the number of layers in the model.
+
+A model with a single hidden layer and sufficient number of nodes has the capability of learning any mapping function, but the chosen learning algorithm may or may not be able to realize this capability.
+
+Increasing the number of layers provides a short-cut to increasing the capacity of the model with fewer resources, and modern techniques allow learning algorithms to successfully train deep models.
 
 # result section 
 
