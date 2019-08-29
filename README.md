@@ -227,5 +227,5 @@ Here are examples of the algorithms:
 ![Screenshot](result4.png)
 
 
-# A blog post
+# A blog [post](https://medium.com/@ahmadashish/write-an-algorithm-for-a-dog-identification-app-3a581bf12a13)
 
