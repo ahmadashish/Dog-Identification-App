@@ -50,6 +50,23 @@ I recommend setting up an environment for this project to ensure you have the pr
 
 # Install
 
+For Mac/OSX:
+
+	conda env create -f requirements/aind-dog-mac.yml
+	source activate aind-dog
+	KERAS_BACKEND=tensorflow python -c "from keras import backend"
+For Linux:
+
+	conda env create -f requirements/aind-dog-linux.yml
+	source activate aind-dog
+	KERAS_BACKEND=tensorflow python -c "from keras import backend"
+For Windows:
+
+	conda env create -f requirements/aind-dog-windows.yml
+	activate aind-dog
+	set KERAS_BACKEND=tensorflow
+	python -c "from keras import backend"
+ 
 This project requires Python 3 and the following Python libraries installed:
 
 NumPy
@@ -95,7 +112,7 @@ You will also need to have software installed to run and execute an iPython Note
 I recommend you install Anaconda, a pre-packaged Python distribution that contains all of the necessary libraries and software for this project
 
 
-
+# file descriptions
 
 
 # A blog post
