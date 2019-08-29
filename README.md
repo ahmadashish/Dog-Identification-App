@@ -191,7 +191,7 @@ Why we use more than one Epoch?
 I know it doesn’t make sense in the starting that — passing the entire dataset through a neural network is not enough. And we need to pass the full dataset multiple times to the same neural network. But keep in mind that we are using a limited dataset and to optimise the learning and the graph we are using Gradient Descent which is an iterative process. So, updating the weights with single pass or one epoch is not enough
 
 One epoch leads to underfitting of the curve in the graph (below).
-![Screenshot](improvement..png)
+![Screenshot](improvement.png)
 
 As the number of epochs increases, more number of times the weight are changed in the neural network and the curve goes from underfitting to optimal to overfitting curve
 
