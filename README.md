@@ -124,9 +124,9 @@ there is saved_models where you will find the models those i worked on
 
 # improvements section 
 
-i create CNN from scratch with test accuracy of 6.1005 %.and i use using transfer learning to train a CNN.
+Create a CNN to Classify Dog Breeds (from Scratch)
 
-## CNN from scratch
+i create CNN from scratch and i use using transfer learning to train a CNN , **with test accuracy of 6.1005 %.**
 
 Our three first layers is Conv2D layers. convolution layers that will deal with our input images, which are seen as 2-dimensional matrices. their number of filters 16,32,64 is the number of nodes, Kernel size is the size of the filter matrix for our convolution.So a kernel size of 2 means we will have a 2x2 filter matrix or feature detector.Padding is used on the convolutional layers to ensure the height and width of the output feature maps matches the inputs. The activation function we will be using for our layers is the ReLU Rectifier Linear Unit which helps with non linearity in the neural network. Our first layer also takes in an input shape.This is the shape of each input image, 224, 224, 3
 And between these layers I added a Max Pooling Layer. we apply max pooling for translational invariance. Translational invariance is when we change the input by a small amount the outputs do not change. Max pooling reduces the number of cells. Pooling helps detect features like colors, edges etc. For max pooling, we use the pool_size of 2 by 2 matrix for all 32 feature maps.
@@ -135,10 +135,17 @@ After that, there is a "Flatten" layer. Flatten serves as a connection between t
 we use Dropout rate of 20% to prevent overfitting.
 The activation is ‘softmax’. Softmax makes the output sum up to 1 so the output can be interpreted as probabilities. The model will then make its prediction based on which option has the highest probability.
 
-then i use The model uses the the pre-trained VGG-16 model as a fixed feature extractor, where the last convolutional output of VGG-16 is fed as input to our model.i only add a global average pooling layer and a fully connected layer, where the latter contains one node for each dog category and is equipped with a softmax.
+use a CNN to Classify Dog Breeds (using Transfer Learning)
 
-then i use transfer learning to create a CNN that can identify dog breed from images. with 80% accuracy on the test set.
+i Use a CNN to Classify Dog Breeds from pre-trained VGG-16 model **with test accuracy: 40.9091%.**
 
+The model uses the the pre-trained VGG-16 model as a fixed feature extractor, where the last convolutional output of VGG-16 is fed as input to our model.i only add a global average pooling layer and a fully connected layer, where the latter contains one node for each dog category and is equipped with a softmax.
+
+Create a CNN to Classify Dog Breeds (using Transfer Learning)
+
+then i use transfer learning to create a CNN that can identify dog breed from images. **with 80% accuracy on the test set.**
+
+I used the CNN architecture with the Resnet50 bottleneck and adding the GlobalAveragePooling2D to flatten the features into a vector that could be fed into a fully-connected layer to the end of the ResNet50 model.where the fully -connected layer contains one node for each dog category and is equipped with a softmax.
 
 # result section 
 
